@@ -6,6 +6,7 @@ public class Arma : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject prefabBala;
+    public AudioSource audioSource; 
 
 
    
@@ -16,7 +17,7 @@ public class Arma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Input.GetMouseButton(1))
         {
            // mv.animator.SetBool("DisparoParado", true);
             Disparar();
@@ -25,6 +26,7 @@ public class Arma : MonoBehaviour
 
     void Disparar()
     {
-       Instantiate(prefabBala, firePoint.position, firePoint.rotation);        
+       Instantiate(prefabBala, firePoint.position, firePoint.rotation);   
+       audioSource.Play();     
     }
 }

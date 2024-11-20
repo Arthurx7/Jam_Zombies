@@ -12,22 +12,22 @@ public class Bala : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * velocidad;
-        // Destruye el objeto (la bala) después de 10 segundos
         Destroy(gameObject, 10f);
     }
 
-    //private void OnTriggerEnter(Collider collision)
-    //{
-        //if (collision.CompareTag("Enemigo"))
-        //{
-            //Enemigo enemigo = collision.GetComponent<Enemigo>();
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.CompareTag("Enemigo"))
+        {
+            Enemigos enemigo = collision.GetComponent<Enemigos>();
 
-        //if (enemigo != null)
-        //{
-        //    enemigo.tomarDano(dano);
-        //}
+        if (enemigo != null)
+        {
+            enemigo.tomarDano(dano);
+            Destroy(gameObject);
+        }
 
-       //}
-  // }
+        }
+    }
 }
 
