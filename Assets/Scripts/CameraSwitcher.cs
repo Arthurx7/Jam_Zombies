@@ -8,12 +8,13 @@ public class CameraSwitcher : MonoBehaviour
 
     public delegate void CameraChanged(Transform newCameraTransform);
     public static event CameraChanged OnCameraChanged;
+    public int Priority1 = 1;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            activeCam.Priority = 1;
+            activeCam.Priority = Priority1;
             OnCameraChanged?.Invoke(activeCam.transform); // Notificar el cambio de cámara
         }
     }
