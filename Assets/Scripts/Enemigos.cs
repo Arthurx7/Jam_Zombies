@@ -37,6 +37,9 @@ public class Enemigos : MonoBehaviour
     void Update()
     {
         ComportamientoEnemigo();
+        if(salud <= 0){
+            animator.SetBool("Die", true);
+        }
     }
 
     public void ComportamientoEnemigo()
