@@ -21,6 +21,10 @@ public class Health : MonoBehaviour
 
     public void RecibirDaño(){
         VidaPersonaje -= 10f;
-        healthSlider.value = VidaPersonaje;
+        ActualizarBarra();
+    }
+
+    public void ActualizarBarra(){
+         healthSlider.value = VidaPersonaje;
     }
 }

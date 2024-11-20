@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Win : MonoBehaviour
 {
-    [SerializeField] private string victorySceneName = "Win";
+    [SerializeField] private string victorySceneName = "Menu";
 
     private void OnTriggerEnter(Collider other)
     {
