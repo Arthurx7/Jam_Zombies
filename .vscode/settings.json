@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ResidentEvil.sln"
+    "dotnet.defaultSolution": "Jam_Zombies.sln"
 }
